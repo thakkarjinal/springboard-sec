@@ -1,0 +1,117 @@
+body {
+    background: antiquewhite;
+    font-family: Roboto, "Open Sans", Helvetica, Arial;
+}
+.heading {
+    text-align: center;
+}
+
+.form-container {
+    text-align: left;
+}
+
+ul {
+    list-style: none;
+    font-size: x-large;
+}
+
+li {
+    padding: 10px;
+    
+}
+
+input[type="text"] {
+    width: 70%;
+    height: 30px;
+    background-color: azure;
+    border-width: thin;
+    border-radius: 3px;
+    border-color: #6f02f5;
+    border-style: solid;
+    font-size: initial;
+    padding: 3px;
+}
+
+input[type="submit"] {
+    color: azure;
+    background: #6f02f5;
+    padding:10px 15px; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-size: initial;
+    position: relative;
+    left: 600px;
+}
+
+.meme-container {
+    text-align: center; 
+}
+
+.meme-container div.meme {
+    position: relative;
+    border: 1px solid black;
+    height: 370px;  
+    width: 370px;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 400;
+    margin: 20px;
+    box-shadow: 10px 10px 6px -6px #777;
+}
+
+div.meme img {
+    width: 100%;
+    height: 100%;
+}
+
+span {
+    color: white;
+    text-shadow: 0 0 3px #000000, 0 0 5px #000006;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+span.upper {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    width: 100%;
+}
+
+span.lower {
+    position: absolute;
+    top: 300px;
+    left: 0px;
+    width: 100%;
+}
+
+.meme-container div.meme:hover {
+    -webkit-filter: brightness(50%);
+    filter: brightness(50%);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    cursor: pointer;
+} 
+
+.meme-container div:hover:after {
+    transition: all 1s ease;
+    cursor: pointer;
+    content: "X";
+    color:white;
+    font-size: 100px;
+    text-align: center;
+    position: absolute;
+    top: 120px;
+    left: 0px;
+    width: 100%;
+    text-shadow: 0 0 3px #000000, 0 0 5px #000006;
+    font-weight: bold;
+}
+
+
+
