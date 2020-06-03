@@ -4,19 +4,19 @@
  * column until a player gets four-in-a-row (horiz, vert, or diag) or until
  * board fills (tie)
  */
+class Player {
+    constructor(color, number) {
+        this.color = color;
+        this.number = number;
+    }
+}
 class Game {
-    RED_PLAYER = {
-        color: 'red',
-        number: 2
-    }
-    BLUE_PLAYER = {
-        color: 'blue',
-        number: 1
-    }
-    constructor(width = 7, height = 6) {
+    constructor(player1, player2, width = 7, height = 6) {
         this.width = width;
         this.height = height;
-        this.currPlayer = this.BLUE_PLAYER; // active player: 1 or 2
+        this.player1 = player1;
+        this.player2 = player2;
+        this.currPlayer = player1; // active player: 1 or 2
         this.board = new Array(this.height); // array of rows, each row is array of cells  (board[y][x])
     }
 
@@ -77,7 +77,7 @@ class Game {
         let piece = document.createElement('div');
         let grid = document.getElementById(`${y}-${x}`);
         piece.classList.add('piece');
-        piece.classList.add(this.currPlayer.color);
+        piece.style.background = this.currPlayer.color;
         grid.append(piece);
     }
   
@@ -92,7 +92,7 @@ class Game {
     }
     
     switchPlayer = () => {
-        this.currPlayer = this.currPlayer === this.BLUE_PLAYER ? this.RED_PLAYER : this.BLUE_PLAYER;
+        this.currPlayer = this.currPlayer === this.player1 ? this.player2 : this.player1;
     }
     /** checkForWin: check board cell-by-cell for "does a win start here?" */
   
@@ -130,7 +130,9 @@ class Game {
   }
 }
 
-let game = new Game();
+let player1 = new Player('orange', 1);
+let player2 = new Player('teal', 2);
+let game = new Game(player1, player2);
 game.makeBoard();
 game.makeHtmlBoard();
 

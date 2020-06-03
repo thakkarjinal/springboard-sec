@@ -14,16 +14,8 @@
   width: 85%;
   height: 85%;
   border-radius: 50%;
-  
 }
 
-.blue {
-  background: darkblue;
-}
-
-.red {
-  background: red;
-}
 
 /* TODO: make pieces red/blue,  depending on player 1/2 piece */
 
