@@ -10,6 +10,7 @@ class Player {
         this.number = number;
     }
 }
+
 class Game {
     constructor(player1, player2, width = 7, height = 6) {
         this.width = width;
@@ -62,12 +63,10 @@ class Game {
     /** findSpotForCol: given column x, return top empty y (null if filled) */
 
     findSpotForCol = (x) => {
-        let xColumn = [];
-        for (let i = 0; i < this.height; i++)
-            xColumn.push(this.board[i][x])
-        if (xColumn.every( val => val != null)) return -1;
-        let spot = xColumn.reverse().findIndex( (val, y) => document.getElementById(`${y}-${x}`).children.length !== 0 )
-        return spot == -1 ? 5 : spot - 1;
+        for (let y = this.height - 1; y >= 0; y--) {
+            if(this.board[y][x] === null)
+                return y;
+        }
     }
   
     /** placeInTable: update DOM to place piece into HTML table of board */
@@ -132,7 +131,8 @@ class Game {
 
 let player1 = new Player('orange', 1);
 let player2 = new Player('teal', 2);
-let game = new Game(player1, player2);
+
+let game = new Game(player1, player2, 10, 7);
 game.makeBoard();
 game.makeHtmlBoard();
 
@@ -142,7 +142,7 @@ const handleClick = (evt) => {
 
     // get next spot in column (if none, ignore click)
     const y = game.findSpotForCol(x);
-    if (y === -1) {
+    if (y === null) {
         return;
     }
 
