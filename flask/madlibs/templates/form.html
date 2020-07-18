@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Madlibs Form {% endblock %}
+{% block h1%} Madlibs Form {% endblock %}
+{% block content %}
+    <form action="/story" id="madlibs" method="POST">
+        <ul style="list-style-type:none;">
+            {% for key in keys %}
+            <li>
+                {{ key }}:  <input type="text" name="{{ key }}"><br><br>
+            </li>
+            {% endfor %}
+        </ul>
+        <input type="submit" value="Get Story!">
+    </form>
+{% endblock %}
