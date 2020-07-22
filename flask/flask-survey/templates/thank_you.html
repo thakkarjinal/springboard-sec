@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Thank you for taking the survey!</h2>
+    <p>Here are your responses:</p>
+    <ul>
+        {% for i in range(questions|length) %}
+            <li>{{ questions[i].question }} <b> {{ responses[i] }}</b></li>
+        {% endfor %}
+    </ul>
+{% endblock%}
