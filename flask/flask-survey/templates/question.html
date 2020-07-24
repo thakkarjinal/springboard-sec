@@ -7,7 +7,7 @@
             <br>
             <input type="hidden" name="{{ question }}" />
             {% for choice in choices %} 
-                <input type="radio" value="{{choice}}" name="choice" id="{{choice}}" />
+                <input type="radio" value="{{choice}}" name="choice" id="{{choice}}" required/>
                 <label for="{{choice}}">{{choice}}</label><br>
             {% endfor %}
             <input type="submit" value="Submit">
