@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Convert Form</title>
+</head>
+<body>
+    {% for msg in get_flashed_messages() %}
+        <p>{{ msg }}</p>
+    {% endfor %}
+    <form action="/calculate_new_currency" method="POST" id="currency-convert">
+        Converting from <input type="text" name="from-currency" required><br><br>
+        Converting to <input type="text" name="to-currency" required><br><br>
+        Amount: <input type="text" name="amount" required><br><br>
+        <input type="submit" value="Convert"> 
+    </form>
+</body>
+</html>
